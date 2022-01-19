@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="80dp"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_marginStart="10dp"
+	android:layout_marginEnd="10dp"
+	app:cardCornerRadius="20dp"
+	android:elevation="10dp"
+	android:layout_marginBottom="5dp"
+	android:layout_marginTop="5dp"
+	android:background="@color/white">
+
+	<LinearLayout
+		android:weightSum="2"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:id="@+id/flaticon1"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="0.7"
+			android:contentDescription="@string/flaticon1"
+			android:padding="5dp"
+			android:src="@drawable/book"
+			tools:ignore="ImageContrastCheck" />
+
+		<LinearLayout
+			android:layout_weight="1.3"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/txt_mapel"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/KJD"
+				android:textSize="20sp"
+				android:textColor="@color/black"
+				android:textStyle="bold"
+				android:layout_marginTop="10dp"
+				android:layout_marginStart="10dp"/>
+		</LinearLayout>
+
+
+
+	</LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

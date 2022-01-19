@@ -1,0 +1,115 @@
+<resources>
+	<string name="app_name">tkjlearning</string>
+
+	<!--	fragment account -->
+
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+
+	<!-- Menu	-->
+	<string name="menu1">Home</string>
+	<string name="menu2">Riwayat Tugas</string>
+	<string name="menu3">Bantuan</string>
+	<string name="menu4">Akun</string>
+
+	<!-- single_menu_matapelajaran	-->
+	<string name="KJD">Komputer dan Jaringan Dasar</string>
+	<string name="flaticon1">Flaticon</string>
+
+	<!-- single_pertemuan1	-->
+	<string name="pertemuan1">Pertemuan 1</string>
+	<string name="meet">meet</string>
+	<string name="tgl">Selasa, 14–05–2021</string>
+
+	<!-- Detail Pertemuan	-->
+	<string name="cd_dtl_meet">meet</string>
+	<string name="tv_dtl_pertemuan">Detail Pertemuan :</string>
+	<string name="tv_nm_pertemuan">Pertemuan 1</string>
+	<string name="tv_tgl_pertemuan">Selasa, 14–05–2021</string>
+	<string name="dtl_materi">Materi</string>
+	<string name="dtl_tugas">Tugas</string>
+	<string name="cd_materi">Materi</string>
+	<string name="cd_tugas">Tugas</string>
+	<string name="cd_isi">ISI Materi</string>
+	<string name="pertemuan3">Download Materi:</string>
+	<string name="pertemuan2">tidak ada file</string>
+	<string name="pertemuan5">Download Tugas:</string>
+
+	<!-- Login	-->
+	<string name="login1">Login</string>
+	<string name="login2">Welcome You!</string>
+	<string name="login3">Email</string>
+	<string name="login4">Password</string>
+
+	<!-- Daftar	-->
+	<string name="daftar1">Register</string>
+	<string name="daftar2">Register Now!</string>
+	<string name="daftar3">Name</string>
+	<string name="daftar4">Email</string>
+	<string name="daftar5">Password</string>
+
+	<!--  fragment account	-->
+	<string name="akun1">Arizal Evandi</string>
+	<string name="akun2">0821&#8211;8671&#8211;5262</string>
+	<string name="akun3">admin@gmail.com</string>
+	<string name="akun4">G.Mawar coklat V, E.2 perumahan mawar cluser waykandis, janjung senang</string>
+	<string name="akun5">33745</string>
+	<string name="akun6">Bandar Lampung</string>
+	<string name="akun7">edit</string>
+	<string name="akun8">Alamat</string>
+	<string name="akun9">BANTUAN</string>
+	<string name="akun10">arrowicon</string>
+	<string name="akun11">KETENTUAN LAYANAN</string>
+	<string name="akun12">Logout</string>
+	<string name="akun13">NISN : 123456789</string>
+	<string name="akun14">NISN : </string>
+
+	<!--  fragment home	-->
+	<string name="home1">Dashboard</string>
+	<string name="home2">tkjLerarning-media pembelajaran</string>
+	<string name="home3">Jadwal</string>
+	<string name="home4">Pelajaran</string>
+	<string name="home5">Mata</string>
+	<string name="home6">Kumpulan</string>
+	<string name="home7">Tugas</string>
+	<string name="home8">Kuis</string>
+	<string name="home9">/Test</string>
+	<string name="bantuan1">Aplikasi ini dikembangkan untuk membantu proses Belajar secara Daring.</string>
+	<string name="bantuan2">TKJ Learning :</string>
+	<string name="bantuan3">Info teknis silahkan hubungi:</string>
+	<string name="bantuan4">Arizal Efendi (0821&#8211;8671&#8211;5262)</string>
+	<string name="bantuan5">Mahasiswa Teknik Informatika IBI Darmajaya</string>
+	<string name="bantuan6">NPM : 1611010113</string>
+
+	<!-- ketentuan layanan -->
+	<string name="ktn_layanan">Ketentuan Layanan</string>
+	<string name="no1">1. Aplikasi ini dikembangkan sebagai media yang dapat membantu proses belajar secara Daring.</string>
+	<string name="no2">2. Aplikasi ini menyediakan informasi jadwal pelajaran, mata pelajaran, pertemuan, unduh materi, unduh tugas, dan kuis/test untuk pelajar.</string>
+	<string name="no3">3. Aplikasi ini dapat digunakan oleh pelajar dengan terlebih dahulu melakukan pendaftaran yang disertai pemberian informasi data pribadi anda sebagaimana diminta dalam Aplikasi.</string>
+	<string name="no4">4. Penggunaan beberapa Layanan tertentu dalam Aplikasi mensyaratkan anda untuk mengaktifkan fungsi perizininan akses download pada perangkat.</string>
+	<string name="no5">5. Pengguna dilarang menggunakan aplikasi dengan cara yang melanggar hukum, atau untuk tujuan yang melanggar hukum atau penipuan, atau dengan cara apapun.</string>
+	<string name="title_activity_map">MapActivity</string>
+	<string name="title_activity_map_kafe">MapKafe</string>
+	<string name="tugas1">Judul Tugas</string>
+	<string name="tugas2">Mata Pelajaran</string>
+	<string name="tugas3">Selasa, 01-01-2021</string>
+	<string name="tugas4">tugas</string>
+	<string name="detail_tugas1">Detail Tugas</string>
+	<string name="detail_tugas2">Judul Tugas</string>
+	<string name="detail_tugas3">Senin, 14-01-2021</string>
+	<string name="detail_tugas4">Pengumpulan Jawaban:</string>
+	<string name="detail_tugas5">Belum dikumpulkan</string>
+	<string name="detail_tugas6">SUBMIT</string>
+
+	<!-- Edit Akun -->
+	<string name="edit_nama">Edit Nama</string>
+	<string name="edit_nisn">Edit NISN</string>
+	<string name="edit_notelp">Edit Nomor Telepon</string>
+	<string name="edit_alamat">Edit Alamat</string>
+	<string name="edit_password">Edit Password</string>
+	<string name="btn_simpan">Simpan</string>
+	<string name="jadwal1">nama pelajaran</string>
+	<string name="jadwal2">jadwal</string>
+	<string name="jadwal3">nama kelas</string>
+	<string name="jadwal4">logo</string>
+
+</resources>

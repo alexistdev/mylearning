@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".fragment.Home_fragment"
+	android:background="@color/biru1">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<RelativeLayout
+			android:layout_margin="10dp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+
+			<LinearLayout
+				android:id="@+id/linearLayout"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent">
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/home1"
+					android:textColor="@color/white"
+					android:textSize="24sp" />
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/home2"
+					android:textColor="@color/white"
+					android:textSize="16sp" />
+			</LinearLayout>
+
+			<ImageView
+				android:id="@+id/imageView"
+				android:layout_width="50dp"
+				android:layout_height="50dp"
+				android:layout_alignParentEnd="true"
+				android:contentDescription="@string/app_name"
+				android:src="@drawable/tkjlogo"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="1"
+				app:layout_constraintStart_toEndOf="@+id/linearLayout"
+				app:layout_constraintTop_toTopOf="parent" />
+		</RelativeLayout>
+
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginTop="20dp">
+			<LinearLayout
+				android:id="@+id/menu"
+				android:layout_marginStart="20dp"
+				android:layout_marginEnd="20dp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintVertical_bias="0"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				android:padding="10dp">
+
+				<LinearLayout
+					android:id="@+id/linearLayout3"
+					android:layout_width="150dp"
+					android:layout_height="100dp"
+					app:layout_constraintWidth_percent=".4"
+					android:background="@drawable/bg_menu_home"
+					android:orientation="vertical"
+					android:padding="20dp"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintHorizontal_bias="0"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent">
+
+					<ImageView
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_gravity="center"
+						android:contentDescription="@string/home3"
+						android:src="@drawable/pelajaran"
+						tools:ignore="ImageContrastCheck" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:text="@string/home3"
+						android:textColor="@color/black" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:id="@+id/linearLayout2"
+					android:layout_width="150dp"
+					app:layout_constraintWidth_percent=".4"
+					android:layout_height="100dp"
+					android:background="@drawable/bg_menu_home"
+					android:orientation="vertical"
+					android:padding="20dp"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintHorizontal_bias="1"
+					app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+					app:layout_constraintTop_toTopOf="parent">
+
+					<ImageView
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_gravity="center"
+						android:contentDescription="@string/home4"
+						android:src="@drawable/tugas"
+						tools:ignore="ImageContrastCheck" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:text="@string/home4"
+						android:textColor="@color/black"
+						android:layout_gravity="center"
+						android:textAlignment="center"/>
+				</LinearLayout>
+			</LinearLayout>
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_marginStart="20dp"
+				android:layout_marginEnd="20dp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/menu"
+				app:layout_constraintVertical_bias="0"
+				android:padding="10dp">
+
+				<LinearLayout
+					android:id="@+id/linearLayout5"
+					android:layout_width="0dp"
+					android:layout_height="100dp"
+					app:layout_constraintWidth_percent=".4"
+					android:background="@drawable/bg_menu_home"
+					android:orientation="vertical"
+					android:padding="20dp"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintHorizontal_bias="0"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent">
+
+					<ImageView
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_gravity="center"
+						android:contentDescription="@string/home5"
+						android:src="@drawable/kuis" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:text="@string/home5"
+						android:textColor="@color/black" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:id="@+id/linearLayout4"
+					android:layout_width="0dp"
+					android:layout_height="100dp"
+					app:layout_constraintWidth_percent=".4"
+					android:background="@drawable/bg_menu_home"
+					android:orientation="vertical"
+					android:padding="20dp"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toEndOf="@+id/linearLayout5"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintHorizontal_bias="1">
+
+					<ImageView
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:layout_gravity="center"
+						android:contentDescription="@string/home6"
+						android:src="@drawable/jadual"
+						tools:ignore="ImageContrastCheck" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:text="@string/home6"
+						android:textAlignment="center"
+						android:textColor="@color/black"/>
+				</LinearLayout>
+			</androidx.constraintlayout.widget.ConstraintLayout>
+		</LinearLayout>
+	</LinearLayout>
+
+</ScrollView>

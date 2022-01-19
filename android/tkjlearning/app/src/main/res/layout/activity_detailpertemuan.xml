@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:fillViewport="true"
+    tools:context=".ui.Detailpertemuan">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+		<com.google.android.material.appbar.AppBarLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<androidx.appcompat.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="?attr/actionBarSize"
+				android:background="@color/button"
+				app:layout_scrollFlags="scroll|enterAlways"
+				app:title="Detail Pertemuan"
+				app:titleTextColor="@color/white"/>
+		</com.google.android.material.appbar.AppBarLayout>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:elevation="10dp"
+			android:orientation="vertical"
+			android:padding="20dp">
+
+			<ImageView
+				android:id="@+id/dtl_img_meet"
+				android:layout_width="match_parent"
+				android:layout_height="150dp"
+				android:contentDescription="@string/cd_dtl_meet"
+				android:src="@drawable/meet" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="15dp"
+				android:text="@string/tv_dtl_pertemuan"
+				android:textColor="@color/black"
+				android:textSize="20sp"
+				android:textStyle="bold" />
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:orientation="horizontal"
+				android:weightSum="2">
+
+				<TextView
+					android:id="@+id/dtl_nm_pertemuan"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1.5"
+					android:text="@string/tv_nm_pertemuan"
+					android:textColor="@color/black"
+					android:textSize="15sp" />
+
+				<TextView
+					android:id="@+id/dtl_txt_tgl"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="0.5"
+					android:text="@string/tv_tgl_pertemuan"
+					android:textColor="@color/black"
+					android:textSize="15sp" />
+			</LinearLayout>
+
+			<!--  garis pembatas	-->
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:layout_marginTop="10dp"
+				android:background="@color/black" />
+
+			<!--	Materi		-->
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginStart="20dp"
+				android:layout_marginTop="20dp"
+				android:layout_marginEnd="20dp"
+				android:layout_marginBottom="20dp"
+				android:drawablePadding="20dp"
+				android:gravity="center_vertical"
+				android:text="@string/dtl_materi"
+				android:textColor="#039BE5"
+				android:textSize="20sp"
+				android:textStyle="bold"
+				app:drawableStartCompat="@drawable/materi"
+				tools:ignore="TextContrastCheck" />
+
+			<!--	ISI Materi		-->
+			<TextView
+				android:id="@+id/txt_materi"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/cd_isi"
+				android:layout_marginStart="20dp"
+				android:layout_marginTop="20dp"
+				android:layout_marginEnd="20dp"
+				android:layout_marginBottom="20dp"
+				android:textSize="18sp"/>
+
+			<!--	START : LAMPIRAN MATERI	-->
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="20dp"
+				android:layout_marginEnd="20dp"
+				android:orientation="vertical"
+				android:background="@drawable/border_materi">
+				<TextView
+					android:layout_marginStart="10sp"
+					android:layout_marginTop="10sp"
+					android:layout_marginEnd="10sp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/pertemuan3"
+					android:textStyle="bold"
+					android:textSize="18sp" />
+
+				<TextView
+					android:id="@+id/file_pdf"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="20sp"
+					android:layout_marginEnd="20sp"
+					android:layout_marginBottom="10sp"
+					android:text="@string/pertemuan2"
+					android:textColor="#0277BD"
+					android:textSize="18sp"
+					tools:ignore="TextContrastCheck" />
+			</LinearLayout>
+			<!--	END : LAMPIRAN MATERI	-->
+
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginStart="20dp"
+				android:layout_marginTop="20dp"
+				android:layout_marginEnd="20dp"
+				android:layout_marginBottom="20dp"
+				android:drawablePadding="20dp"
+				android:gravity="center_vertical"
+				android:text="@string/dtl_tugas"
+				android:textColor="@color/black"
+				android:textSize="20sp"
+				android:textStyle="bold"
+				app:drawableStartCompat="@drawable/tugas" />
+
+			<!--	START : LAMPIRAN MATERI	-->
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="20dp"
+				android:layout_marginEnd="20dp"
+				android:orientation="vertical"
+				android:background="@drawable/border_materi">
+				<TextView
+					android:layout_marginStart="10sp"
+					android:layout_marginTop="10sp"
+					android:layout_marginEnd="10sp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/pertemuan5"
+					android:textStyle="bold"
+					android:textSize="18sp" />
+
+				<TextView
+					android:id="@+id/file_tugas"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="20sp"
+					android:layout_marginEnd="20sp"
+					android:layout_marginBottom="10sp"
+					android:text="@string/pertemuan2"
+					android:textColor="#0277BD"
+					android:textSize="18sp"
+					tools:ignore="TextContrastCheck" />
+			</LinearLayout>
+			<!--	END : LAMPIRAN MATERI	-->
+
+		</LinearLayout>
+	</LinearLayout>
+</ScrollView>

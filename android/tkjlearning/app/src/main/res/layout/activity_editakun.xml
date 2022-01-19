@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Editakun">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		tools:ignore="MissingConstraints">
+		<androidx.appcompat.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="@color/button"
+			app:layout_scrollFlags="scroll|enterAlways"
+			app:title="Edit Akun"
+			app:titleTextColor="@color/white"/>
+
+		<EditText
+			android:id="@+id/txt_edtnama"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="20dp"
+			android:layout_marginTop="50dp"
+			android:layout_marginEnd="20dp"
+			android:autofillHints="Edit Nama"
+			android:hint="@string/edit_nama"
+			android:inputType="text"
+			android:minHeight="48dp" />
+
+		<EditText
+			android:id="@+id/txt_edtnisn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="20dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginEnd="20dp"
+			android:autofillHints="Edit NISN"
+			android:hint="@string/edit_nisn"
+			android:inputType="textEmailAddress"
+			android:minHeight="48dp" />
+
+		<EditText
+			android:id="@+id/txt_edtnotelp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="20dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginEnd="20dp"
+			android:autofillHints="Edit No Telepon"
+			android:hint="@string/edit_notelp"
+			android:inputType="textPassword"
+			android:minHeight="48dp"
+			tools:ignore="TextContrastCheck" />
+
+		<EditText
+			android:id="@+id/txt_edtalamat"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="20dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginEnd="20dp"
+			android:autofillHints="Edit Alamat"
+			android:hint="@string/edit_alamat"
+			android:inputType="textPassword"
+			android:minHeight="48dp"
+			tools:ignore="TextContrastCheck" />
+
+		<EditText
+			android:id="@+id/txt_edtpassword"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="20dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginEnd="20dp"
+			android:autofillHints="Edit Password"
+			android:hint="@string/edit_password"
+			android:inputType="textPassword"
+			android:minHeight="48dp"
+			tools:ignore="TextContrastCheck" />
+
+		<Button
+			android:id="@+id/btn_simpan"
+			android:layout_width="200dp"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="50dp"
+			android:textColor="@color/white"
+			android:text="@string/btn_simpan"
+			android:textAllCaps="false"
+			android:background="@drawable/buttonstyle"
+			android:layout_gravity="center"/>
+
+	</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

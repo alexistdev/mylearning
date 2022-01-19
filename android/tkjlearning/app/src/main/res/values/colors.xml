@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+	<color name="colorPrimary">#3F51B5</color>
+	<color name="colorPrimaryDark">#303F9F</color>
+	<color name="colorAccent">#FF4081</color>
+	<color name="colorAzur">#F1F5F8</color>
+
+
+	<color name="biru1">#112261</color>
+	<color name="abu1">#DFDCDC</color>
+	<color name="biru2">#142D41</color>
+	<color name="putih1">#F7F7F7</color>
+	<color name="hijau1">#078c61</color>
+	<color name="kuning1">#FFCC00</color>
+	<color name="hitam">#111111</color>
+	<color name="putih2">#FFFFFF</color>
+	<color name="orange">#F04E26</color>
+
+	<!--	latar -->
+	<color name="latar1">#FFFFFF</color>
+	<color name="latar2">#FAD7E9</color>
+	<color name="latar3">#FBF5EA</color>
+	<color name="latar4">#FBDBA7</color>
+
+	<!--	bg buton-->
+	<color name="button" >#3F51B5</color>
+
+	<!--	line-->
+	<color name="line">#00BCD4</color>
+
+</resources>

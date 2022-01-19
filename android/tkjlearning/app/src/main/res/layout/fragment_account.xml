@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/bg_fragment_account"
+	android:orientation="vertical"
+	tools:context=".fragment.Account_fragment">
+
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="10dp"
+		android:layout_marginTop="20dp"
+		android:layout_marginEnd="10dp"
+		android:background="@drawable/bg_item_fragment_account"
+		android:orientation="horizontal"
+		android:padding="20dp">
+
+
+		<TextView
+			android:id="@+id/txt_nama"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/akun1"
+			android:textColor="@color/black"
+			android:textSize="20sp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintVertical_bias="0" />
+
+		<ImageView
+			android:id="@+id/img_edit"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:contentDescription="@string/akun7"
+			android:src="@drawable/icon_edit"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="1"
+			app:layout_constraintStart_toEndOf="@+id/txt_nama"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintVertical_bias="0"
+			tools:ignore="ImageContrastCheck" />
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/txt_nama">
+
+			<TextView
+				android:id="@+id/txt_nisn"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:text="@string/akun13"
+				android:textColor="@color/black" />
+
+			<TextView
+				android:id="@+id/txt_nohp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:text="@string/akun2"
+				android:textColor="@color/black" />
+
+			<TextView
+				android:id="@+id/txt_email"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="5dp"
+				android:text="@string/akun3"
+				android:textColor="@color/black" />
+		</LinearLayout>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<!--  garis pembatas	-->
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginEnd="10dp"
+		android:background="@color/line" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="10dp"
+		android:layout_marginEnd="10dp"
+		android:background="@color/latar1"
+		android:orientation="vertical"
+		android:padding="20dp">
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/akun8"
+			android:textColor="@color/black"
+			android:textSize="20sp" />
+
+		<TextView
+			android:id="@+id/txt_alamat"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="5dp"
+			android:text="@string/akun4"
+			android:textColor="@color/black" />
+
+
+	</LinearLayout>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/ly_bantuan"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="10dp"
+		android:layout_marginTop="20dp"
+		android:layout_marginEnd="10dp"
+		android:background="@color/latar1"
+		android:orientation="horizontal"
+		android:padding="15dp">
+
+		<TextView
+			android:id="@+id/txt_bantuan"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/akun9"
+			android:textColor="@color/black"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageView
+			android:id="@+id/icon_arrow_right"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:contentDescription="@string/akun10"
+			android:src="@drawable/icon_arrow_right"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="1"
+			app:layout_constraintStart_toEndOf="@+id/txt_bantuan"
+			app:layout_constraintTop_toTopOf="parent" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<!--  garis pembatas	-->
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginEnd="10dp"
+		android:background="@color/line" />
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/ly_ketentuan"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="10dp"
+		android:layout_marginEnd="10dp"
+		android:background="@color/latar1"
+		android:orientation="horizontal"
+		android:padding="15dp">
+
+		<TextView
+			android:id="@+id/txt_ketentuan_layanan"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/akun11"
+			android:textColor="@color/black"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="0"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageView
+			android:id="@+id/icon_arrow_right2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:contentDescription="@string/akun10"
+			android:src="@drawable/icon_arrow_right"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHorizontal_bias="1"
+			app:layout_constraintStart_toEndOf="@+id/txt_ketentuan_layanan"
+			app:layout_constraintTop_toTopOf="parent" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<!--  garis pembatas	-->
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginEnd="10dp"
+		android:background="@color/line" />
+
+	<!--  garis pembatas	-->
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginEnd="10dp"
+		android:background="@color/line" />
+
+	<Button
+		android:id="@+id/btn_logout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="10dp"
+		android:layout_marginTop="20dp"
+		android:layout_marginEnd="10dp"
+		android:backgroundTint="@color/button"
+		android:text="@string/akun12"
+		tools:ignore="TextContrastCheck" />
+
+
+</LinearLayout>
