@@ -85,21 +85,21 @@
 
                         <li class="nav-item">
                             <a href="{{route('admin.kelas')}}"
-                               class="nav-link {{($tagSubMenu == 'kategori')?"active":""}}">
+                               class="nav-link {{($tagSubMenu == 'kelas')?"active":""}}">
                                 <i class="nav-icon fa fa-clipboard-list"></i>
                                 <p>
                                     DATA KELAS
                                 </p>
                             </a>
                         </li>
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="" class="nav-link {{($tagSubMenu == 'toko')?"active":""}}">--}}
-{{--                                <i class="nav-icon fa fa-clipboard-list"></i>--}}
-{{--                                <p>--}}
-{{--                                    DATA TOKO--}}
-{{--                                </p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
+                        <li class="nav-item">
+                            <a href="{{route('admin.mapel')}}" class="nav-link {{($tagSubMenu == 'mapel')?"active":""}}">
+                                <i class="nav-icon fa fa-clipboard-list"></i>
+                                <p>
+                                    DATA MATA PELAJARAN
+                                </p>
+                            </a>
+                        </li>
 {{--                        <li class="nav-item">--}}
 {{--                            <a href="../gallery.html" class="nav-link">--}}
 {{--                                <i class="nav-icon fa fa-clipboard-list"></i>--}}

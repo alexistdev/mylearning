@@ -15,4 +15,9 @@ class Kelas extends Model
     {
         return $this->hasMany(Mapel::class);
     }
+
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtolower($value);
+    }
 }

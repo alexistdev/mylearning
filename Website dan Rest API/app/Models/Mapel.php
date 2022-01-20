@@ -22,4 +22,15 @@ class Mapel extends Model
         return $this->hasMany(Jadwal::class);
     }
 
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtolower($value);
+    }
+
+    public function getNameAttribute($str)
+    {
+        return ucfirst($str);
+    }
+
+
 }
