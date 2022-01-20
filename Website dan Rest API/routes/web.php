@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\{DashboardController as DashAdmin,KelasController as KelasAdmin,MapelController as MapelAdmin};
+use App\Http\Controllers\Admin\{DashboardController as DashAdmin,KelasController as KelasAdmin,MapelController as MapelAdmin, JadwalController as JadAdmin};
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +39,14 @@ Route::group(['middleware' => ['web','auth','roles']],function() {
         Route::delete('/admin/matapelajaran', [MapelAdmin::class, 'destroy'])->name('admin.deletemapel');
         Route::get('/admin/matapelajaran/{id}/edit', [MapelAdmin::class, 'edit'])->name('admin.editmapel');
         Route::get('/admin/matapelajaran/add', [MapelAdmin::class, 'create'])->name('admin.addmapel');
+
+        /** Jadwal */
+        Route::get('/admin/jadwal', [JadAdmin::class, 'index'])->name('admin.jadwal');
+        Route::post('/admin/jadwal', [JadAdmin::class, 'save'])->name('admin.savejadwal');
+        Route::patch('/admin/jadwal', [JadAdmin::class, 'update'])->name('admin.updatejadwal');
+        Route::delete('/admin/jadwal', [JadAdmin::class, 'destroy'])->name('admin.deletejadwal');
+        Route::get('/admin/jadwal/add', [JadAdmin::class, 'create'])->name('admin.addjadwal');
+        Route::get('/admin/jadwal/{id}/edit', [JadAdmin::class, 'edit'])->name('admin.editjadwal');
     });
 });
 

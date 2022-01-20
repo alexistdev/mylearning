@@ -100,14 +100,14 @@
                                 </p>
                             </a>
                         </li>
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="../gallery.html" class="nav-link">--}}
-{{--                                <i class="nav-icon fa fa-clipboard-list"></i>--}}
-{{--                                <p>--}}
-{{--                                    DATA PRODUK--}}
-{{--                                </p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
+                        <li class="nav-item">
+                            <a href="{{route('admin.jadwal')}}" class="nav-link {{($tagSubMenu == 'jadwal')?"active":""}}">
+                                <i class="nav-icon fa fa-clipboard-list"></i>
+                                <p>
+                                    DATA JADWAL
+                                </p>
+                            </a>
+                        </li>
                     @endif
                 </ul>
             </nav>
