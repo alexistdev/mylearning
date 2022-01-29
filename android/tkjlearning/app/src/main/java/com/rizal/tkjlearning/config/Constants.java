@@ -5,6 +5,7 @@ public class Constants {
 //	public static final String IMAGES_URL = "https://tkjlearning.xyz/gambar/produk/";
 //	public static final String FILE_URL ="https://tkjlearning.xyz/file/";
 
+
     public static final String URL ="http://192.168.56.1:8000/";
 	public static final String FILE_URL ="http://192.168.56.1:8000/Storage/File";
 	public static final String IMAGES_URL = "http://192.168.56.1:8000/Gambar";

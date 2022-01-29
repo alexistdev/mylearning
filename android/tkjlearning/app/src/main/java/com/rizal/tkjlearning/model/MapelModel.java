@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class MapelModel {
 	@SerializedName("id")
 	private final String id_pelajaran;
-	@SerializedName("nama_pelajaran")
+	@SerializedName("name")
 	private final String nama_pelajaran;
 
 	public MapelModel(String id_pelajaran, String nama_pelajaran) {

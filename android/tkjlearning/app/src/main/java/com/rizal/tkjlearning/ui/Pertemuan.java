@@ -59,7 +59,6 @@ public class Pertemuan extends AppCompatActivity {
 				@EverythingIsNonNull
 				@Override
 				public void onResponse(Call<GetPertemuan> call, Response<GetPertemuan> response) {
-					progressDialog.dismiss();
 					if(response.isSuccessful()) {
 						if (response.body() != null) {
 							daftarPertemuan = response.body().getDaftarPertemuan();
@@ -71,19 +70,17 @@ public class Pertemuan extends AppCompatActivity {
 				@Override
 				public void onFailure(Call<GetPertemuan> call, Throwable t) {
 					if(t instanceof NoConnectivityException) {
-						progressDialog.dismiss();
 						pesan("Offline, cek koneksi internet anda!");
 					}
 				}
 			});
 		}catch (Exception e){
-			progressDialog.dismiss();
 			e.printStackTrace();
 		}
 	}
 
 	private void dataInit(){
-		progressDialog = ProgressDialog.show(this, "", "Loading.....", true, false);
+		//progressDialog = ProgressDialog.show(this, "", "Loading.....", true, false);
 		toolbar = findViewById(R.id.toolbar);
 		gridView = findViewById(R.id.rcPertemuan);
 	}

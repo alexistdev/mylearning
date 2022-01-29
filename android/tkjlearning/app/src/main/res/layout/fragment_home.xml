@@ -130,7 +130,7 @@
 		app:layout_constraintTop_toBottomOf="@+id/gambar" />
 
 	<androidx.cardview.widget.CardView
-		android:id="@+id/dht2"
+		android:id="@+id/cd_mapel"
 		app:cardCornerRadius="10sp"
 		android:elevation="10sp"
 		android:layout_width="150dp"
@@ -250,7 +250,7 @@
 		android:layout_marginTop="20dp"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toEndOf="@+id/view"
-		app:layout_constraintTop_toBottomOf="@+id/dht2">
+		app:layout_constraintTop_toBottomOf="@+id/cd_mapel">
 
 		<androidx.constraintlayout.widget.ConstraintLayout
 			android:layout_width="match_parent"

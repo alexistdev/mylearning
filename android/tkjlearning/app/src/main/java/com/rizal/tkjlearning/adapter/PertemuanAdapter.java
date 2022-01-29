@@ -2,6 +2,7 @@ package com.rizal.tkjlearning.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,16 +40,16 @@ public class PertemuanAdapter extends RecyclerView.Adapter<PertemuanAdapter.MyPe
 	public void onBindViewHolder (@NonNull PertemuanAdapter.MyPertemuanHolder holder, final int position){
 		holder.mJudul.setText(mPertemuanList.get(position).getJudul());
 
-		String tanggal = mPertemuanList.get(position).getTanggal();
-		Date Dibuat = new Date(Long.parseLong(tanggal) * 1000);
-		SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault());
-		String date = formatter.format(Dibuat);
-		holder.mTanggal.setText(date);
+//		String tanggal = mPertemuanList.get(position).getTanggal();
+//		Date Dibuat = new Date(Long.parseLong(tanggal) * 1000);
+//		SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault());
+//		String date = formatter.format(Dibuat);
+//		holder.mTanggal.setText(date);
 
 
 		holder.itemView.setOnClickListener(view -> {
 			Intent mIntent = new Intent(view.getContext(), Detailpertemuan.class);
-			mIntent.putExtra("idPertemuan",mPertemuanList.get(position).getId_pertemuan());
+			mIntent.putExtra("idPertemuan",mPertemuanList.get(position).getIdpertemuan());
 			view.getContext().startActivity(mIntent);
 		});
 	}

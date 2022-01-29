@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class MateriModel {
 	@SerializedName("id")
-	private final String id_pertemuan;
+	private final String idpertemuan;
 	@SerializedName("judul")
 	private final String judul;
 	@SerializedName("deskripsi")
@@ -16,8 +16,8 @@ public class MateriModel {
 	@SerializedName("lampiran")
 	private final String lampiran;
 
-	public MateriModel(String id_pertemuan, String judul, String deskripsi, String gambar, String tanggal, String lampiran) {
-		this.id_pertemuan = id_pertemuan;
+	public MateriModel(String idpertemuan, String judul, String deskripsi, String gambar, String tanggal, String lampiran) {
+		this.idpertemuan = idpertemuan;
 		this.judul = judul;
 		this.deskripsi = deskripsi;
 		this.gambar = gambar;
@@ -25,8 +25,8 @@ public class MateriModel {
 		this.lampiran = lampiran;
 	}
 
-	public String getId_pertemuan() {
-		return id_pertemuan;
+	public String getIdpertemuan() {
+		return idpertemuan;
 	}
 
 	public String getJudul() {

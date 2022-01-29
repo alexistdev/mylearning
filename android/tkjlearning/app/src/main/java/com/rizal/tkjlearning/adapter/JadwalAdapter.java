@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.rizal.tkjlearning.R;
 import com.rizal.tkjlearning.model.JadwalModel;
-import com.rizal.tkjlearning.model.JawabanModel;
 
 import java.util.List;
 

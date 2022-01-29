@@ -64,22 +64,19 @@ public class Detailpertemuan extends AppCompatActivity {
 		try{
 			Call<MateriModel> call= APIService.Factory.create(mContext).detailPertemuan(idPertemuan);
 			call.enqueue(new Callback<MateriModel>() {
-
 				@EverythingIsNonNull
 				@Override
 				public void onResponse(Call<MateriModel> call, Response<MateriModel> response) {
-
-					progressDialog.dismiss();
 					if(response.isSuccessful()) {
 						if (response.body() != null) {
 							mPertemuan.setText(response.body().getJudul());
 							mMateri.setText(response.body().getDeskripsi());
 							/* Format tanggal dari Unix ke Human */
-							String tanggal = response.body().getTanggal();
-							Date Dibuat = new Date(Long.parseLong(tanggal) * 1000);
-							SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault());
-							String date = formatter.format(Dibuat);
-							mTanggal.setText(date);
+//							String tanggal = response.body().getTanggal();
+//							Date Dibuat = new Date(Long.parseLong(tanggal) * 1000);
+//							SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault());
+//							String date = formatter.format(Dibuat);
+//							mTanggal.setText(date);
 							if(response.body().getLampiran() != null){
 								mFile.setText(response.body().getLampiran());
 								mFile.setOnClickListener(v -> startDownload(response.body().getLampiran()));
@@ -94,7 +91,7 @@ public class Detailpertemuan extends AppCompatActivity {
 				public void onFailure(Call<MateriModel> call, Throwable t) {
 
 					if(t instanceof NoConnectivityException) {
-						progressDialog.dismiss();
+
 						pesan("Offline, cek koneksi internet anda!");
 					}
 
@@ -102,14 +99,13 @@ public class Detailpertemuan extends AppCompatActivity {
 
 			});
 		} catch (Exception e){
-			progressDialog.dismiss();
 			e.printStackTrace();
 		}
 	}
 
 
 	private void dataInit(){
-		progressDialog = ProgressDialog.show(this, "", "Loading.....", true, false);
+//		progressDialog = ProgressDialog.show(this, "", "Loading.....", true, false);
 		toolbar = findViewById(R.id.toolbar);
 		mTanggal = findViewById(R.id.dtl_txt_tgl);
 		mPertemuan = findViewById(R.id.dtl_nm_pertemuan);
