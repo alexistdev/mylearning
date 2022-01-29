@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\{DashboardController as DashAdmin,KelasController as KelasAdmin,MapelController as MapelAdmin, JadwalController as JadAdmin};
+use App\Http\Controllers\Admin\{DashboardController as DashAdmin,KelasController as KelasAdmin,MapelController as MapelAdmin, JadwalController as JadAdmin,GuruController as GuruAdmin};
+use App\Http\Controllers\Guru\{DashboardController as DashGuru,MateriController as MatGuru,KelasController as KelasGuru,SiswaController as SiswaGuru, MapelController as MapelGuru, TugasController as TugasGuru,KuisController as KuisGuru};
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,33 @@ Route::redirect('/', '/login');
 //    return view('dashboard');
 //})->middleware(['auth'])->name('dashboard');
 Route::group(['middleware' => ['web','auth','roles']],function() {
+
+    /** ROLE:GURU */
+    Route::group(['roles' => 'guru'], function () {
+        Route::get('/guru/dashboard', [DashGuru::class, 'index'])->name('guru.dashboard');
+        /** Materi */
+        Route::get('/guru/materi', [MatGuru::class, 'index'])->name('guru.materi');
+        /** Kelas */
+        Route::get('/guru/kelas', [KelasGuru::class, 'index'])->name('guru.kelas');
+        Route::get('/guru/{id}/kelas/siswa', [SiswaGuru::class, 'index'])->name('guru.siswa');
+
+        /** Mapel */
+        Route::get('/guru/mapel', [MapelGuru::class, 'index'])->name('guru.mapel');
+        Route::get('/guru/tugas', [TugasGuru::class, 'index'])->name('guru.tugas');
+        Route::get('/guru/kuis', [KuisGuru::class, 'index'])->name('guru.kuis');
+    });
+
+
+
+    /** ROLE: ADMIN */
     Route::group(['roles' => 'admin'], function () {
 
         Route::get('/admin/dashboard', [DashAdmin::class, 'index'])->name('admin.dashboard');
+
+        /** Guru */
+        Route::get('/admin/guru', [GuruAdmin::class, 'index'])->name('admin.guru');
+        Route::post('/admin/guru', [GuruAdmin::class, 'save'])->name('admin.saveguru');
+        Route::get('/admin/guru/add', [GuruAdmin::class, 'create'])->name('admin.addguru');
 
         /** Kelas */
         Route::get('/admin/kelas', [KelasAdmin::class, 'index'])->name('admin.kelas');

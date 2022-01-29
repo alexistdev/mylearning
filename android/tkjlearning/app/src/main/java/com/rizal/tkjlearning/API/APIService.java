@@ -75,7 +75,7 @@ public interface APIService {
 	//API untuk login
 	@Headers({"x-api-key: 92K5wAWs7MPqY54St72HB3ETEqjvRP22"})
 	@FormUrlEncoded
-	@POST("api/Auth")
+	@POST("api/login")
 	Call<LoginModel> loginUser(@Field("email") String email,
 							   @Field("password") String password);
 

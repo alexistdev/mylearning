@@ -8,8 +8,8 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.rizal.tkjlearning.fragment.Account_fragment;
 import com.rizal.tkjlearning.fragment.Bantuan;
+import com.rizal.tkjlearning.fragment.Home_fragment;
 import com.rizal.tkjlearning.fragment.Tugas_fragment;
-import com.rizal.tkjlearning.fragment.home_fragment2;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,14 +18,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-		loadFragment(new home_fragment2());
+		loadFragment(new Home_fragment());
 		/* Mengatur Menu bottom bar */
 		BottomNavigationView bottomNavigationView = findViewById(R.id.bottomMenu);
 		bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
 			Fragment fragment = null;
 			switch (item.getItemId()){
 				case R.id.home_menu:
-					fragment = new home_fragment2();
+					fragment = new Home_fragment();
 					break;
 				case R.id.bantuan_menu:
 					fragment = new Bantuan();

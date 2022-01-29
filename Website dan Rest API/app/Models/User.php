@@ -60,4 +60,9 @@ class User extends Authenticatable
         return (strtolower($role)==strtolower($this->have_role->name)) ? true : false;
     }
 
+    public function guru()
+    {
+        return $this->hasMany(Guru::class);
+    }
+
 }

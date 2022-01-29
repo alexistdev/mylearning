@@ -17,7 +17,7 @@ class KelasSeeder extends Seeder
     {
         $date = Carbon::now()->format('Y-m-d H:i:s');
         $kelas = array(
-            array('name' => 'Kelas X','created_at' => $date,'updated_at' => $date),
+            array('name' => 'Kelas X','guru_id' => '1','created_at' => $date,'updated_at' => $date),
         );
         Kelas::insert($kelas);
     }

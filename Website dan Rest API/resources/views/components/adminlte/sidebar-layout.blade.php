@@ -27,41 +27,10 @@
                     data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
-                    @if(Auth::user()->role_id == '3')
-                        <li class="nav-header">HALAMAN USER</li>
-                        <li class="nav-item">
-                            <a href=""
-                               class="nav-link {{($tagSubMenu == 'dashboard')?"active":""}}">
-
-                                <i class="nav-icon fa fa-tachometer-alt"></i>
-                                <p>
-                                    DASHBOARD
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href=""
-                               class="nav-link {{($tagSubMenu == 'belanja')?"active":""}}">
-                                <i class="nav-icon fa fa-cart-plus"></i>
-                                <p>
-                                    BELANJA
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href=""
-                               class="nav-link {{($tagSubMenu == 'transaksi')?"active":""}}">
-                                <i class="nav-icon fa fa-credit-card"></i>
-                                <p>
-                                    TRANSAKSI
-                                </p>
-                            </a>
-                        </li>
-                    @endif
                     @if(Auth::user()->role_id == '2')
-                        <li class="nav-header">HALAMAN STORE</li>
+                        <li class="nav-header">HALAMAN GURU</li>
                         <li class="nav-item">
-                            <a href=""
+                            <a href="{{route('guru.dashboard')}}"
                                class="nav-link {{($tagSubMenu == 'dashboard')?"active":""}}">
 
                                 <i class="nav-icon fa fa-tachometer-alt"></i>
@@ -71,18 +40,34 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href=""
-                               class="nav-link {{($tagSubMenu == 'produk')?"active":""}}">
+                            <a href="{{route('guru.kelas')}}"
+                               class="nav-link {{($tagSubMenu == 'materi')?"active":""}}">
                                 <i class="nav-icon fa fa-boxes"></i>
                                 <p>
-                                    PRODUK
+                                    KELAS
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('guru.mapel')}}"
+                               class="nav-link {{($tagSubMenu == 'mapel')?"active":""}}">
+                                <i class="nav-icon fa fa-book"></i>
+                                <p>
+                                    MATA PELAJARAN
                                 </p>
                             </a>
                         </li>
                     @endif
                     @if(Auth::user()->role_id == '1')
                         <li class="nav-header">MASTER DATA</li>
-
+                        <li class="nav-item">
+                            <a href="{{route('admin.guru')}}" class="nav-link {{($tagSubMenu == 'guru')?"active":""}}">
+                                <i class="nav-icon fa fa-clipboard-list"></i>
+                                <p>
+                                    DATA GURU
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{route('admin.kelas')}}"
                                class="nav-link {{($tagSubMenu == 'kelas')?"active":""}}">
