@@ -47,13 +47,13 @@ public class Jadwal extends AppCompatActivity {
 			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 			getSupportActionBar().setDisplayShowTitleEnabled(true);
 		}
-		String idUser = "6";
-		setData(getApplicationContext(),idUser);
+		String idKelas = "1";
+		setData(getApplicationContext(),idKelas);
     }
 
-	public void setData(Context mContext, String idUser) {
+	public void setData(Context mContext, String idKelas) {
 		try {
-			Call<GetJadwal> call = APIService.Factory.create(mContext).dataJadwal(idUser);
+			Call<GetJadwal> call = APIService.Factory.create(mContext).dataJadwal(idKelas);
 			call.enqueue(new Callback<GetJadwal>() {
 				@EverythingIsNonNull
 				@Override

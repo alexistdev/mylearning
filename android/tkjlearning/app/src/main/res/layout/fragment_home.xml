@@ -185,7 +185,7 @@
 	</androidx.cardview.widget.CardView>
 	<!--  SOIL      -->
 	<androidx.cardview.widget.CardView
-		android:id="@+id/soil"
+		android:id="@+id/cd_tugas"
 		app:cardCornerRadius="10sp"
 		android:elevation="10sp"
 		android:layout_width="150dp"
@@ -242,7 +242,7 @@
 	</androidx.cardview.widget.CardView>
 
 	<androidx.cardview.widget.CardView
-		android:id="@+id/udara"
+		android:id="@+id/cd_jadwal"
 		app:cardCornerRadius="10sp"
 		android:elevation="10sp"
 		android:layout_width="150dp"

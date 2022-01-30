@@ -76,7 +76,7 @@ public class Detailpertemuan extends AppCompatActivity {
 //							Date Dibuat = new Date(Long.parseLong(tanggal) * 1000);
 //							SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault());
 //							String date = formatter.format(Dibuat);
-//							mTanggal.setText(date);
+							mTanggal.setText(response.body().getTanggal());
 							if(response.body().getLampiran() != null){
 								mFile.setText(response.body().getLampiran());
 								mFile.setOnClickListener(v -> startDownload(response.body().getLampiran()));

@@ -96,8 +96,8 @@ class MapelController extends Controller
             $materi = Materi::find($request->id);
             if($materi != null){
                 return response()->json([
-//                    'status' => true,
-//                    'message' => 'Data berhasil didapatkan',
+                    'status' => true,
+                    'message' => 'Data berhasil didapatkan',
                     'materi' => $materi->id,
                     'judul' => $materi->judul,
                     'deskripsi' => $materi->deskripsi,

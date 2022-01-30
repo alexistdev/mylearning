@@ -39,9 +39,7 @@ public class Account_fragment extends Fragment {
 	private TextView mNama,mEmail,mPhone,mAlamat,mNisn;
 	private ConstraintLayout mBantuan,mKetentuan;
 
-    public Account_fragment() {
-        // Required empty public constructor
-    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,12 +60,9 @@ public class Account_fragment extends Fragment {
 		dataInit(mview);
 		setData(idUser);
 
-		mEdit.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(getActivity(), Editakun.class);
-				startActivity(intent);
-			}
+		mEdit.setOnClickListener(v -> {
+			Intent intent = new Intent(getActivity(), Editakun.class);
+			startActivity(intent);
 		});
 		mLogout.setOnClickListener(v -> {
 			SessionHandle.logout(requireContext());

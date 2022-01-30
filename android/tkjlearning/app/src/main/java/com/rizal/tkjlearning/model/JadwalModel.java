@@ -3,8 +3,7 @@ package com.rizal.tkjlearning.model;
 import com.google.gson.annotations.SerializedName;
 
 public class JadwalModel {
-	@SerializedName("id")
-	private final String idJadwal;
+
 
 	@SerializedName("nama_pelajaran")
 	private final String namaMapel;
@@ -15,15 +14,10 @@ public class JadwalModel {
 	@SerializedName("jadwal")
 	private final String jadwal;
 
-	public JadwalModel(String idJadwal, String namaMapel, String namaKelas, String jadwal) {
-		this.idJadwal = idJadwal;
+	public JadwalModel(String namaMapel, String namaKelas, String jadwal) {
 		this.namaMapel = namaMapel;
 		this.namaKelas = namaKelas;
 		this.jadwal = jadwal;
-	}
-
-	public String getIdJadwal() {
-		return idJadwal;
 	}
 
 	public String getNamaMapel() {

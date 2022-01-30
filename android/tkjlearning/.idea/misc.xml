@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/PROJECT LARAVEL/mylearning/android/tkjlearning/app/src/main/res/layout/activity_detailpertemuan.xml" value="0.25677083333333334" />
+        <entry key="..\:/PROJECT LARAVEL/mylearning/android/tkjlearning/app/src/main/res/layout/activity_tugas.xml" value="0.381025641025641" />
         <entry key="..\:/PROJECT LARAVEL/mylearning/android/tkjlearning/app/src/main/res/layout/fragment_home.xml" value="0.2222222222222222" />
+        <entry key="..\:/PROJECT LARAVEL/mylearning/android/tkjlearning/app/src/main/res/layout/single_tugas.xml" value="0.381025641025641" />
         <entry key="..\:/PROJECT LARAVEL/mylearning/android/tkjlearning/app/src/main/res/menu/item_bottom_navigation.xml" value="0.381025641025641" />
       </map>
     </option>

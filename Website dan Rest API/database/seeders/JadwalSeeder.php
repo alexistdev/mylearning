@@ -16,8 +16,8 @@ class JadwalSeeder extends Seeder
     {
         $date = Carbon::now()->format('Y-m-d H:i:s');
         $jadwal = array(
-            array('mapel_id'=>'1','name' => 'Senin, pkl.07.00 - 08.00','created_at' => $date,'updated_at' => $date),
-            array('mapel_id'=>'1','name' => 'Rabu, pkl.10.00 - 11.00','created_at' => $date,'updated_at' => $date),
+            array('mapel_id'=>'1','kelas_id'=>'1','name' => 'Senin, pkl.07.00 - 08.00','created_at' => $date,'updated_at' => $date),
+            array('mapel_id'=>'1','kelas_id'=>'1','name' => 'Rabu, pkl.10.00 - 11.00','created_at' => $date,'updated_at' => $date),
         );
         Jadwal::insert($jadwal);
     }

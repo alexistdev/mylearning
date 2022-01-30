@@ -11,4 +11,10 @@ class Materi extends Model
     protected $fillable = [
         'mapel_id','judul','deskripsi','gambar','lampiran'
     ];
+
+    public function mapel()
+    {
+        return $this->belongsTo(Mapel::class);
+    }
+
 }

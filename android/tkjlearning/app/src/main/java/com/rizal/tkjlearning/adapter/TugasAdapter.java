@@ -41,13 +41,13 @@ public class TugasAdapter extends RecyclerView.Adapter<TugasAdapter.MyTugasHolde
 	@Override
 	public void onBindViewHolder (@NonNull TugasAdapter.MyTugasHolder holder, final int position){
 		holder.mJudul.setText(mTugasList.get(position).getJudulTugas());
-		holder.mMapel.setText(mTugasList.get(position).getNama_pelajaran());
+		holder.mMapel.setText(mTugasList.get(position).getNamaMapel());
 
-		String tanggal = mTugasList.get(position).getTanggalTugas();
-		Date Dibuat = new Date(Long.parseLong(tanggal) * 1000);
-		SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault());
-		String date = formatter.format(Dibuat);
-		holder.mTanggal.setText(date);
+//		String tanggal = mTugasList.get(position).getTanggalTugas();
+//		Date Dibuat = new Date(Long.parseLong(tanggal) * 1000);
+//		SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault());
+//		String date = formatter.format(Dibuat);
+		holder.mTanggal.setText(mTugasList.get(position).getAkhir());
 
 
 

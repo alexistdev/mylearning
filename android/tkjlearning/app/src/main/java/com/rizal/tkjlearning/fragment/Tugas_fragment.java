@@ -30,10 +30,6 @@ public class Tugas_fragment extends Fragment {
 	private ProgressDialog progressDialog;
 
 
-	public Tugas_fragment() {
-		// Required empty public constructor
-	}
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -1,7 +1,6 @@
 package com.rizal.tkjlearning.API;
 
 import android.content.Context;
-
 import com.rizal.tkjlearning.BuildConfig;
 import com.rizal.tkjlearning.config.Constants;
 import com.rizal.tkjlearning.model.AkunModel;
@@ -12,17 +11,8 @@ import com.rizal.tkjlearning.response.GetJawaban;
 import com.rizal.tkjlearning.response.GetMapel;
 import com.rizal.tkjlearning.response.GetPertemuan;
 import com.rizal.tkjlearning.response.GetTugas;
-
-
 import java.util.concurrent.TimeUnit;
-
-
-
-
-
-
 import okhttp3.OkHttpClient;
-import okhttp3.RequestBody;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -31,11 +21,8 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
-import retrofit2.http.Multipart;
 import retrofit2.http.POST;
-import retrofit2.http.Part;
 import retrofit2.http.Query;
-
 public interface APIService {
 
 
@@ -50,11 +37,9 @@ public interface APIService {
 	Call<GetTugas> dataTugas(@Query("id_kelas") String idKelas);
 
 
-
-
 	/* Mendapatkan List Jadwal  */
-	@GET("admin/api/jadwal")
-	Call<GetJadwal> dataJadwal(@Query("id_user") String idUser);
+	@GET("api/jadwal")
+	Call<GetJadwal> dataJadwal(@Query("id_kelas") String idKelas);
 
 
 	/* Mendapatkan Detail Akun */
@@ -70,22 +55,18 @@ public interface APIService {
 							   @Field("password") String password);
 
 	/* Mendapatkan Data Mata Pelajaran */
-
 	@GET("api/mapel")
 	Call<GetMapel> dataMapel(@Query("id_kelas") String idKelas);
 
 	/* Mendapatkan Data Pertemuan */
-
 	@GET("api/pertemuan")
 	Call<GetPertemuan> dataPertemuan(@Query("id_mapel") String idMapel);
 
 	/* Mendapatkan Detail Pertemuan */
-
 	@GET("api/pertemuan/detail")
 	Call<MateriModel> detailPertemuan(@Query("id") String idPertemuan);
 
 	class Factory{
-
 		public static APIService create(Context mContext){
 			OkHttpClient.Builder builder = new OkHttpClient.Builder();
 			builder.readTimeout(20, TimeUnit.SECONDS);

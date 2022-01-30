@@ -6,24 +6,28 @@ public class TugasModel {
 	@SerializedName("id")
 	private final String idTugas;
 
-	@SerializedName("judul_tugas")
+	@SerializedName("name")
 	private final String judulTugas;
 
-	@SerializedName("created_at")
-	private final String tanggalTugas;
+	@SerializedName("mapel")
+	private final String namaMapel;
+
+	@SerializedName("deskripsi")
+	private final String deskripsi;
 
 	@SerializedName("lampiran")
 	private final String lampiranTugas;
 
-	@SerializedName("nama_pelajaran")
-	private final String nama_pelajaran;
+	@SerializedName("batas_akhir")
+	private final String akhir;
 
-	public TugasModel(String idTugas, String judulTugas, String tanggalTugas, String lampiranTugas, String nama_pelajaran) {
+	public TugasModel(String idTugas, String judulTugas, String namaMapel, String deskripsi, String lampiranTugas, String akhir) {
 		this.idTugas = idTugas;
 		this.judulTugas = judulTugas;
-		this.tanggalTugas = tanggalTugas;
+		this.namaMapel = namaMapel;
+		this.deskripsi = deskripsi;
 		this.lampiranTugas = lampiranTugas;
-		this.nama_pelajaran = nama_pelajaran;
+		this.akhir = akhir;
 	}
 
 	public String getIdTugas() {
@@ -34,15 +38,19 @@ public class TugasModel {
 		return judulTugas;
 	}
 
-	public String getTanggalTugas() {
-		return tanggalTugas;
+	public String getNamaMapel() {
+		return namaMapel;
+	}
+
+	public String getDeskripsi() {
+		return deskripsi;
 	}
 
 	public String getLampiranTugas() {
 		return lampiranTugas;
 	}
 
-	public String getNama_pelajaran() {
-		return nama_pelajaran;
+	public String getAkhir() {
+		return akhir;
 	}
 }
