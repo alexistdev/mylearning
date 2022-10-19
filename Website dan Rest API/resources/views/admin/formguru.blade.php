@@ -100,7 +100,7 @@
                                     @method('patch')
 
                                     <div class="form-group">
-                                        <input type="text" name="user_id" value="{{$datauser->id}}">
+                                        <input type="hidden" name="user_id" value="{{$datauser->id}}">
                                     </div>
                                     <!-- Start: NAMA -->
                                     <div class="form-group">

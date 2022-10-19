@@ -57,7 +57,7 @@
                     <!-- START: MODAL HAPUS -->
                     <div class="modal fade" id="modalHapus" tabindex="-1"  aria-hidden="true">
                         <div class="modal-dialog">
-                            <form action="{{route('admin.deletemapel')}}" method="post">
+                            <form action="{{route('admin.guru.delete')}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <div class="modal-content">
@@ -65,7 +65,7 @@
                                         <h5 class="modal-title" id="exampleModalLabel">HAPUS</h5>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="hidden" id="idhapus" name="id" value="">
+                                        <input type="hidden" id="idhapus" name="user_id" value="">
                                         Apakah anda ingin menghapus data ini?
                                     </div>
                                     <div class="modal-footer">
@@ -114,7 +114,6 @@
                 $(document).on("click", ".hapus", function () {
                     var id = $(this).data('id');
                     $('#idhapus').val(id);
-
                 });
             </script>
         </div>

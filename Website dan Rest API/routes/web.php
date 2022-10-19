@@ -55,6 +55,7 @@ Route::group(['middleware' => ['web','auth','roles']],function() {
         Route::get('/admin/guru', [GuruAdmin::class, 'index'])->name('admin.guru');
         Route::post('/admin/guru', [GuruAdmin::class, 'save'])->name('admin.guru.save');
         Route::patch('/admin/guru', [GuruAdmin::class, 'update'])->name('admin.guru.update');
+        Route::delete('/admin/guru', [GuruAdmin::class, 'destroy'])->name('admin.guru.delete');
         Route::get('/admin/guru/add', [GuruAdmin::class, 'create'])->name('admin.guru.add');
         Route::get('/admin/guru/{id}/edit', [GuruAdmin::class, 'edit'])->name('admin.guru.edit');
 

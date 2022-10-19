@@ -26,7 +26,7 @@ class GuruController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $user = User::with('guru')->where('role_id',2)->get();
+            $user = User::with('guru')->where('role_id', 2)->get();
             return Datatables::of($user)
                 ->addIndexColumn()
                 ->editColumn('created_at', function ($data) {
@@ -62,10 +62,11 @@ class GuruController extends Controller
             'datauser' => $user,
         ));
     }
+
     /** route: admin.guru.edit */
     public function edit($id)
     {
-        $user= User::with('guru')->findOrFail(base64_decode($id));
+        $user = User::with('guru')->findOrFail(base64_decode($id));
         return view('admin.formguru', array(
             'judul' => "Dashboard Administrator | MyLearning V.1.0",
             'aktifTag' => "guru",
@@ -76,6 +77,7 @@ class GuruController extends Controller
             'id' => base64_decode($id),
         ));
     }
+
     /** route: admin.guru.update */
     public function update(Request $request)
     {
@@ -84,29 +86,29 @@ class GuruController extends Controller
                 'user_id' => 'required|numeric',
                 'nama' => 'required|max:125',
                 'email' => [
-                  'required',
+                    'required',
                     Rule::unique('users')->ignore($request->user_id),
                 ],
                 'nip' => [
-                  'required',
-                    Rule::unique('gurus')->ignore($request->user_id,'user_id'),
+                    'required',
+                    Rule::unique('gurus')->ignore($request->user_id, 'user_id'),
                 ],
                 'phone' => 'required|max:255',
                 'alamat' => 'required|max:500',
             ]);
             DB::beginTransaction();
             try {
-                User::where('id',$request->user_id)->update([
-                   'name' => $request->nama,
-                   'email' => $request->email,
+                User::where('id', $request->user_id)->update([
+                    'name' => $request->nama,
+                    'email' => $request->email,
                 ]);
-                Guru::where('user_id',$request->user_id)->update([
+                Guru::where('user_id', $request->user_id)->update([
                     'nip' => $request->nip,
                     'phone' => $request->phone,
                     'alamat' => $request->alamat,
                 ]);
                 DB::commit();
-                return redirect(route('admin.guru.edit',base64_encode($request->user_id)))->with(['success' => "Data Guru berhasil diperbaharui!"]);
+                return redirect(route('admin.guru.edit', base64_encode($request->user_id)))->with(['success' => "Data Guru berhasil diperbaharui!"]);
             } catch (Exception $e) {
                 DB::rollback();
                 return redirect(route('admin.guru'))->with(['error' => $e->getMessage()]);
@@ -116,7 +118,7 @@ class GuruController extends Controller
         }
     }
 
-    /** route: admin.saveguru */
+    /** route: admin.guru.save */
     public function save(Request $request)
     {
         if ($request->routeIs('admin.*')) {
@@ -143,11 +145,26 @@ class GuruController extends Controller
                 $guru->alamat = $request->alamat;
                 $guru->save();
                 DB::commit();
-                return redirect(route('admin.guru'))->with('success','Data berhasil disimpan!');
+                return redirect(route('admin.guru'))->with('success', 'Data berhasil disimpan!');
             } catch (Exception $e) {
                 DB::rollback();
                 return redirect(route('admin.guru'))->with(['error' => $e->getMessage()]);
             }
+        } else {
+            return abort("404", "NOT FOUND");
+        }
+    }
+
+    /** route: admin.guru.delete */
+    public function destroy(Request $request)
+    {
+        if ($request->routeIs('admin.*')) {
+            $request->validate([
+                'user_id' => 'required|numeric',
+            ]);
+            $user = User::findOrFail($request->user_id);
+            $user->delete();
+            return redirect(route('admin.guru'))->with(['success' => "Guru berhasil di delete"]);
         } else {
             return abort("404", "NOT FOUND");
         }
