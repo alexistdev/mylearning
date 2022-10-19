@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Traits\AdminAuth;
 use App\Models\Jadwal;
 use App\Models\Kelas;
 use App\Models\Mapel;
@@ -14,17 +15,7 @@ use Yajra\DataTables\DataTables;
 
 class JadwalController extends Controller
 {
-    protected $users;
-    protected $role;
-
-    public function __construct()
-    {
-        $this->middleware(function ($request, $next) {
-            $this->users = Auth::user();
-            $this->role = User::with('role')->find($this->users->id)->role;
-            return $next($request);
-        });
-    }
+    use AdminAuth;
 
     public function index(Request $request)
     {

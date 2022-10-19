@@ -1,8 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\{DashboardController as DashAdmin,KelasController as KelasAdmin,MapelController as MapelAdmin, JadwalController as JadAdmin,GuruController as GuruAdmin};
-use App\Http\Controllers\Guru\{DashboardController as DashGuru,MateriController as MatGuru,KelasController as KelasGuru,SiswaController as SiswaGuru, MapelController as MapelGuru, TugasController as TugasGuru,KuisController as KuisGuru};
+use App\Http\Controllers\Admin\{
+    DashboardController as DashAdmin,
+    KelasController as KelasAdmin,
+    MapelController as MapelAdmin,
+    JadwalController as JadAdmin,
+    GuruController as GuruAdmin,
+    UserController as UserAdmin};
+use App\Http\Controllers\Guru\{
+    DashboardController as DashGuru,MateriController as MatGuru,KelasController as KelasGuru,SiswaController as SiswaGuru, MapelController as MapelGuru, TugasController as TugasGuru,KuisController as KuisGuru};
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +50,9 @@ Route::group(['middleware' => ['web','auth','roles']],function() {
     Route::group(['roles' => 'admin'], function () {
 
         Route::get('/admin/dashboard', [DashAdmin::class, 'index'])->name('admin.dashboard');
+
+        /** User */
+        Route::get('/admin/users', [UserAdmin::class, 'index'])->name('admin.users');
 
         /** Guru */
         Route::get('/admin/guru', [GuruAdmin::class, 'index'])->name('admin.guru');

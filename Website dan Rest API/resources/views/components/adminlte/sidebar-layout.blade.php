@@ -61,6 +61,14 @@
                     @if(Auth::user()->role_id == '1')
                         <li class="nav-header">MASTER DATA</li>
                         <li class="nav-item">
+                            <a href="{{route('admin.users')}}" class="nav-link {{($tagSubMenu == 'user')?"active":""}}">
+                                <i class="nav-icon fa fa-clipboard-list"></i>
+                                <p>
+                                    DATA USER
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('admin.guru')}}" class="nav-link {{($tagSubMenu == 'guru')?"active":""}}">
                                 <i class="nav-icon fa fa-clipboard-list"></i>
                                 <p>

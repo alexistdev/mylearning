@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Traits\AdminAuth;
+use App\Http\Traits\GuruAuth;
 use App\Models\Guru;
 use App\Models\Jadwal;
 use App\Models\Mapel;
@@ -10,21 +12,14 @@ use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\DataTables;
+use Exception;
 
 class GuruController extends Controller
 {
-    protected $users;
-    protected $role;
-
-    public function __construct()
-    {
-        $this->middleware(function ($request, $next) {
-            $this->users = Auth::user();
-            $this->role = User::with('role')->find($this->users->id)->role;
-            return $next($request);
-        });
-    }
+    use AdminAuth;
 
     public function index(Request $request)
     {
@@ -65,21 +60,41 @@ class GuruController extends Controller
         ));
     }
 
+    /** route: admin.saveguru */
     public function save(Request $request)
     {
-        $request->validate([
-            'user_id' => 'required|numeric',
-            'nip' => 'required|unique:gurus|max:255',
-            'phone' => 'required|max:255',
-            'alamat' => 'required|max:500',
-        ]);
-        $guru = new Guru();
-        $guru->user_id = $request->user_id;
-        $guru->nip = $request->nip;
-        $guru->phone = $request->phone;
-        $guru->alamat = $request->alamat;
-        $guru->save();
-        return redirect(route('admin.guru'))->with('success','Data berhasil disimpan!');
+        if ($request->routeIs('admin.*')) {
+            $request->validate([
+                'nama' => 'required|max:125',
+                'email' => 'required|unique:users,email',
+                'nip' => 'required|unique:gurus|max:255',
+                'phone' => 'required|max:255',
+                'alamat' => 'required|max:500',
+            ]);
+            DB::beginTransaction();
+            try {
+                $user = new User();
+                $user->role_id = 2;
+                $user->name = $request->nama;
+                $user->email = $request->email;
+                $user->password = Hash::make("1234");
+                $user->save();
 
+                $guru = new Guru();
+                $guru->user_id = $user->id;
+                $guru->nip = $request->nip;
+                $guru->phone = $request->phone;
+                $guru->alamat = $request->alamat;
+                $guru->save();
+                DB::commit();
+                return redirect(route('admin.guru'))->with('success','Data berhasil disimpan!');
+            } catch (Exception $e) {
+                DB::rollback();
+//                return redirect(route('admin.guru'))->with(['error' => $e->getMessage()]);
+                echo $e->getMessage();
+            }
+        } else {
+            return abort("404", "NOT FOUND");
+        }
     }
 }
