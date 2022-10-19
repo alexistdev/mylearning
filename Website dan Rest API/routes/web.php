@@ -6,8 +6,7 @@ use App\Http\Controllers\Admin\{
     KelasController as KelasAdmin,
     MapelController as MapelAdmin,
     JadwalController as JadAdmin,
-    GuruController as GuruAdmin,
-    UserController as UserAdmin};
+    GuruController as GuruAdmin};
 use App\Http\Controllers\Guru\{
     DashboardController as DashGuru,MateriController as MatGuru,KelasController as KelasGuru,SiswaController as SiswaGuru, MapelController as MapelGuru, TugasController as TugasGuru,KuisController as KuisGuru};
 
@@ -51,13 +50,13 @@ Route::group(['middleware' => ['web','auth','roles']],function() {
 
         Route::get('/admin/dashboard', [DashAdmin::class, 'index'])->name('admin.dashboard');
 
-        /** User */
-        Route::get('/admin/users', [UserAdmin::class, 'index'])->name('admin.users');
 
         /** Guru */
         Route::get('/admin/guru', [GuruAdmin::class, 'index'])->name('admin.guru');
-        Route::post('/admin/guru', [GuruAdmin::class, 'save'])->name('admin.saveguru');
-        Route::get('/admin/guru/add', [GuruAdmin::class, 'create'])->name('admin.addguru');
+        Route::post('/admin/guru', [GuruAdmin::class, 'save'])->name('admin.guru.save');
+        Route::patch('/admin/guru', [GuruAdmin::class, 'update'])->name('admin.guru.update');
+        Route::get('/admin/guru/add', [GuruAdmin::class, 'create'])->name('admin.guru.add');
+        Route::get('/admin/guru/{id}/edit', [GuruAdmin::class, 'edit'])->name('admin.guru.edit');
 
         /** Kelas */
         Route::get('/admin/kelas', [KelasAdmin::class, 'index'])->name('admin.kelas');

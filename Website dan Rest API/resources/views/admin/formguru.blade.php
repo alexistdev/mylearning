@@ -36,7 +36,7 @@
                         </div>
                         <div class="card-body">
                             @if($tag != 'edit')
-                                <form action="{{route('admin.saveguru')}}" method="post">
+                                <form action="{{route('admin.guru.save')}}" method="post">
                                     @csrf
                                     <!-- Start: NAMA -->
                                     <div class="form-group">
@@ -95,32 +95,69 @@
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             @else
-{{--                                <form action="{{route('admin.updatemapel')}}" method="post">--}}
-{{--                                    @csrf--}}
-{{--                                    @method('patch')--}}
-{{--                                    <div class="form-group">--}}
-{{--                                        <label for="kelas_id">Nama Kelas</label>--}}
-{{--                                        <select name="kelas_id" class="form-control  @error('kelas_id') is-invalid @enderror" id="kelas_id">--}}
-{{--                                            <option value="">Pilih</option>--}}
-{{--                                            @foreach($datakelas as $row)--}}
-{{--                                                <option value="{{$row->id}}" {{($row->id != $mapel->kelas_id)?"":"SELECTED"}}>{{$row->name}}</option>--}}
-{{--                                            @endforeach--}}
-{{--                                        </select>--}}
-{{--                                        @error('kelas_id')--}}
-{{--                                        <div class="text-danger text-sm">{{ $message }}</div>--}}
-{{--                                        @enderror--}}
-{{--                                    </div>--}}
-{{--                                    <div class="form-group">--}}
-{{--                                        <label for="name">Nama Kelas</label>--}}
-{{--                                        <input type="hidden" name="id" value="{{$id}}">--}}
-{{--                                        <input type="text" class="form-control @error('name') is-invalid @enderror"--}}
-{{--                                               id="name" name="name" value="{{$mapel->name}}">--}}
-{{--                                        @error('name')--}}
-{{--                                        <div class="text-danger text-sm">{{ $message }}</div>--}}
-{{--                                        @enderror--}}
-{{--                                    </div>--}}
-{{--                                    <button type="submit" class="btn btn-primary">Submit</button>--}}
-{{--                                </form>--}}
+                                <form action="{{route('admin.guru.save')}}" method="post">
+                                    @csrf
+                                    @method('patch')
+
+                                    <div class="form-group">
+                                        <input type="text" name="user_id" value="{{$datauser->id}}">
+                                    </div>
+                                    <!-- Start: NAMA -->
+                                    <div class="form-group">
+                                        <label for="nama">NAMA USER </label>
+                                        <input type="text" class="form-control @error('nama') is-invalid @enderror"
+                                               id="nama" name="nama" value="{{old('nama',$datauser->name)}}">
+                                        @error('nama')
+                                        <div class="text-danger text-sm">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <!-- End: NAMA -->
+
+                                    <!-- Start: EMAIL -->
+                                    <div class="form-group">
+                                        <label for="email">EMAIL </label>
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                               id="email" name="email" value="{{old('email',$datauser->email)}}">
+                                        @error('email')
+                                        <div class="text-danger text-sm">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <!-- End: EMAIL -->
+
+                                    <!-- Start: NIP -->
+                                    <div class="form-group">
+                                        <label for="nip">NIP</label>
+                                        <input type="text" class="form-control @error('nip') is-invalid @enderror"
+                                               id="nip" name="nip" value="{{old('nip',$datauser->guru->nip)}}">
+                                        @error('nip')
+                                        <div class="text-danger text-sm">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <!-- END: NIP -->
+
+                                    <!-- START: PHONE -->
+                                    <div class="form-group">
+                                        <label for="phone">PHONE</label>
+                                        <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                                               id="phone" name="phone" value="{{old('phone',$datauser->guru->phone)}}">
+                                        @error('phone')
+                                        <div class="text-danger text-sm">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <!-- END: PHONE -->
+
+                                    <!-- START: ALAMAT -->
+                                    <div class="form-group">
+                                        <label for="alamat">ALAMAT</label>
+                                        <input type="text" class="form-control @error('alamat') is-invalid @enderror"
+                                               id="alamat" name="alamat" value="{{old('alamat',$datauser->guru->alamat)}}">
+                                        @error('alamat')
+                                        <div class="text-danger text-sm">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <!-- END: ALAMAT -->
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
                             @endif
                         </div>
                         <!-- /.card-body -->

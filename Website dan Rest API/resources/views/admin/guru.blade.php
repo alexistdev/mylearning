@@ -22,7 +22,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Data Guru</h3>
-                        <a href="{{route('admin.addguru')}}">
+                        <a href="{{route('admin.guru.add')}}">
                             <button class="btn btn-primary btn-sm float-right">TAMBAH</button>
                         </a>
                     </div>
@@ -103,9 +103,9 @@
                                 return meta.row + meta.settings._iDisplayStart + 1; //auto increment
                             }
                         },
-                        {data: 'user.name', class: 'text-left'},
-                        {data: 'nip', class: 'text-left'},
-                        {data: 'phone', class: 'text-center'},
+                        {data: 'name', class: 'text-left'},
+                        {data: 'guru.nip', class: 'text-left'},
+                        {data: 'guru.phone', class: 'text-center'},
                         {data: 'created_at', class: 'text-center'},
                         {data: 'action', class: 'text-center'},
                     ],

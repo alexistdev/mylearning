@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 use Yajra\DataTables\DataTables;
 use Exception;
 
@@ -21,17 +22,18 @@ class GuruController extends Controller
 {
     use AdminAuth;
 
+    /** route: admin.guru */
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $guru = Guru::with('user')->get();
-            return Datatables::of($guru)
+            $user = User::with('guru')->where('role_id',2)->get();
+            return Datatables::of($user)
                 ->addIndexColumn()
                 ->editColumn('created_at', function ($data) {
                     return Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at)->format('d-m-Y H:i:s');
                 })
                 ->addColumn('action', function ($row) {
-                    $btn = '<a href="' . route('admin.editjadwal', $row->id) . '" class="edit btn btn-success btn-sm m-1"> SISWA</a>';
+                    $btn = '<a href="' . route('admin.guru.edit', base64_encode($row->id)) . '" class="edit btn btn-success btn-sm m-1"> EDIT</a>';
                     return $btn . '<a href="#" class="hapus btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#modalHapus" data-id="' . $row->id . '"> HAPUS</a>';
                 })
                 ->rawColumns(['action'])
@@ -45,6 +47,7 @@ class GuruController extends Controller
         ));
     }
 
+    /** route: admin.guru.add */
     public function create()
     {
         $user = User::where('role_id', 2)
@@ -58,6 +61,59 @@ class GuruController extends Controller
             'template' => "adminlte",
             'datauser' => $user,
         ));
+    }
+    /** route: admin.guru.edit */
+    public function edit($id)
+    {
+        $user= User::with('guru')->findOrFail(base64_decode($id));
+        return view('admin.formguru', array(
+            'judul' => "Dashboard Administrator | MyLearning V.1.0",
+            'aktifTag' => "guru",
+            'tagSubMenu' => "guru",
+            'tag' => 'edit',
+            'template' => "adminlte",
+            'datauser' => $user,
+            'id' => base64_decode($id),
+        ));
+    }
+    /** route: admin.guru.update */
+    public function update(Request $request)
+    {
+        if ($request->routeIs('admin.*')) {
+            $request->validate([
+                'user_id' => 'required|numeric',
+                'nama' => 'required|max:125',
+                'email' => [
+                  'required',
+                    Rule::unique('users')->ignore($request->user_id),
+                ],
+                'nip' => [
+                  'required',
+                    Rule::unique('gurus')->ignore($request->user_id,'user_id'),
+                ],
+                'phone' => 'required|max:255',
+                'alamat' => 'required|max:500',
+            ]);
+            DB::beginTransaction();
+            try {
+                User::where('id',$request->user_id)->update([
+                   'name' => $request->nama,
+                   'email' => $request->email,
+                ]);
+                Guru::where('user_id',$request->user_id)->update([
+                    'nip' => $request->nip,
+                    'phone' => $request->phone,
+                    'alamat' => $request->alamat,
+                ]);
+                DB::commit();
+                return redirect(route('admin.guru.edit',base64_encode($request->user_id)))->with(['success' => "Data Guru berhasil diperbaharui!"]);
+            } catch (Exception $e) {
+                DB::rollback();
+                return redirect(route('admin.guru'))->with(['error' => $e->getMessage()]);
+            }
+        } else {
+            return abort("404", "NOT FOUND");
+        }
     }
 
     /** route: admin.saveguru */
@@ -90,8 +146,7 @@ class GuruController extends Controller
                 return redirect(route('admin.guru'))->with('success','Data berhasil disimpan!');
             } catch (Exception $e) {
                 DB::rollback();
-//                return redirect(route('admin.guru'))->with(['error' => $e->getMessage()]);
-                echo $e->getMessage();
+                return redirect(route('admin.guru'))->with(['error' => $e->getMessage()]);
             }
         } else {
             return abort("404", "NOT FOUND");
