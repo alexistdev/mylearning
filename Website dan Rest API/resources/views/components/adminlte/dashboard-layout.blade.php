@@ -3,7 +3,6 @@
     <html lang="en">
     <head>
         <x-adminlte.header-layout :title="$title"/>
-
     </head>
     <body class="hold-transition sidebar-mini">
         <!-- START: Site wrapper -->

@@ -51,6 +51,18 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
+                                        <label for="kelas_id">Kelas</label>
+                                        <select name="kelas_id" class="form-control @error('kelas_id') is-invalid @enderror" id="kelas_id">
+                                            <option value="">Pilih</option>
+                                            @foreach($datakelas as $row)
+                                                <option value="{{$row->id}}" {{($row->id != old('kelas_id'))?"":"SELECTED"}}>{{$row->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('kelas_id')
+                                        <div class="text-danger text-sm">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
                                         <label for="name">KETERANGAN WAKTU</label>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
                                                id="name" name="name" value="{{old('name')}}">

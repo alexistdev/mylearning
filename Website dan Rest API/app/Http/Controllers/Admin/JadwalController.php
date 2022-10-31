@@ -44,6 +44,7 @@ class JadwalController extends Controller
     public function create()
     {
         $mapel = Mapel::all();
+        $kelas = Kelas::all();
         return view('admin.formjadwal', array(
             'judul' => "Dashboard Administrator | MyLearning V.1.0",
             'aktifTag' => "jadwal",
@@ -51,6 +52,7 @@ class JadwalController extends Controller
             'tag' => 'add',
             'template' => "adminlte",
             'datamapel' => $mapel,
+            'datakelas' => $kelas,
         ));
     }
 
@@ -75,11 +77,13 @@ class JadwalController extends Controller
     {
         $request->validate([
             'mapel_id' => 'required|numeric',
+            'kelas_id' => 'required|numeric',
             'name' => 'required|unique:kelas|max:255',
         ]);
         $jadwal = new Jadwal();
         $jadwal->mapel_id = $request->mapel_id;
         $jadwal->name = $request->name;
+        $jadwal->kelas_id = $request->kelas_id;
         $jadwal->save();
         return redirect(route('admin.jadwal'))->with('success','Data berhasil disimpan!');
     }

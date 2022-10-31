@@ -1,4 +1,4 @@
-@if($template == 'adminlte')
+
 <x-adminlte.dashboard-layout :title="$judul" :tagSubMenu="$tagSubMenu" :total-notif="null">
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -21,4 +21,4 @@
     </div>
     <x-adminlte.script-layout/>
 </x-adminlte.dashboard-layout>
-@endif
+

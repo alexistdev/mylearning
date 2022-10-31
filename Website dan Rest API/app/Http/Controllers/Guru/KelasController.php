@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Guru;
 
 use App\Http\Controllers\Controller;
+use App\Http\Traits\GuruAuth;
 use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\User;
@@ -13,17 +14,7 @@ use Yajra\DataTables\DataTables;
 
 class KelasController extends Controller
 {
-    protected $users;
-    protected $role;
-
-    public function __construct()
-    {
-        $this->middleware(function ($request, $next) {
-            $this->users=Auth::user();
-            $this->role=User::with('role')->find($this->users->id)->role;
-            return $next($request);
-        });
-    }
+    use GuruAuth;
 
     public function index(Request $request)
     {

@@ -20,12 +20,6 @@
             <!-- Main content -->
             <section class="content">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Kelas</h3>
-                        <a href="{{route('admin.addkelas')}}">
-                            <button class="btn btn-primary btn-sm float-right">TAMBAH</button>
-                        </a>
-                    </div>
                     <div class="card-body">
                         @if ($message = Session::get('success'))
                             <div class="alert alert-success alert-block">

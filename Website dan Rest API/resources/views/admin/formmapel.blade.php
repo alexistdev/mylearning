@@ -51,6 +51,18 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
+                                        <label for="guru_id">Nama Guru</label>
+                                        <select name="guru_id" class="form-control @error('guru_id') is-invalid @enderror" id="guru_id">
+                                            <option value="">Pilih</option>
+                                            @foreach($dataGuru as $row)
+                                                <option value="{{$row->id}}" {{($row->id != old('guru_id'))?"":"SELECTED"}}>{{$row->user->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('guru_id')
+                                        <div class="text-danger text-sm">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
                                         <label for="name">Nama Mata Pelajaran</label>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
                                                id="name" name="name" value="{{old('name')}}">

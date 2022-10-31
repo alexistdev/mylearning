@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Traits\AdminAuth;
+use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Mapel;
 use App\Models\User;
@@ -45,6 +46,7 @@ class MapelController extends Controller
     public function create()
     {
         $kelas = Kelas::all();
+        $guru = Guru::with('user')->get();
         return view('admin.formmapel', array(
             'judul' => "Dashboard Administrator | MyLearning V.1.0",
             'aktifTag' => "mapel",
@@ -52,6 +54,7 @@ class MapelController extends Controller
             'tag' => 'add',
             'template' => "adminlte",
             'datakelas' => $kelas,
+            'dataGuru' => $guru,
         ));
     }
 
@@ -90,10 +93,12 @@ class MapelController extends Controller
         $request->validate([
             'kelas_id' => 'required',
             'name' => 'required|unique:kelas|max:255',
+            'guru_id' => 'required|numeric',
         ]);
         $mapel = new Mapel();
         $mapel->kelas_id = $request->kelas_id;
         $mapel->name = $request->name;
+        $mapel->guru_id = $request->guru_id;
         $mapel->save();
         return redirect(route('admin.mapel'))->with('success','Data berhasil disimpan!');
     }

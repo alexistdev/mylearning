@@ -39,6 +39,8 @@ Route::group(['middleware' => ['web','auth','roles']],function() {
 
         /** Mapel */
         Route::get('/guru/mapel', [MapelGuru::class, 'index'])->name('guru.mapel');
+
+
         Route::get('/guru/tugas', [TugasGuru::class, 'index'])->name('guru.tugas');
         Route::get('/guru/kuis', [KuisGuru::class, 'index'])->name('guru.kuis');
     });
